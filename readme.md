@@ -4,6 +4,7 @@ Made for https://www.redbull.com/pl-pl/projects/red-bull-racers-polska-2022
 This script detects the race start and then executes the predefined input.
 
 # Requirements
+  * This script will run only under Windows
   * Python 3.10
 
 ## Installation
