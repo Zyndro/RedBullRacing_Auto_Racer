@@ -5,12 +5,12 @@ from ctypes import *
 
 # Click on the start light in minigame to get its position on screen and color
 # Set False to start racing
-get_start_light_screen_location = True
+get_start_light_screen_location = False
 # Fill those manually for your screen
-start_light_x = 839
-start_light_y = 502
-gray = 13158600
-red = 7491571
+start_light_x = 838
+start_light_y = 503
+gray = 12632256
+red = 6899952
 get_color_from = (windll.user32.GetDC(0), start_light_x, start_light_y)
 
 pos_x = []
