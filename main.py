@@ -1,33 +1,14 @@
 import time
 import pyautogui
-from pynput.mouse import Listener
 from ctypes import *
 
-# Click on the start light in minigame to get its position on screen and color
-# Set False to start racing
-get_start_light_screen_location = False
-# Fill those manually for your screen
+
+# Fill those manually for your screen with data from other script
 start_light_x = 838
 start_light_y = 503
 gray = 12632256
 red = 6899952
 get_color_from = (windll.user32.GetDC(0), start_light_x, start_light_y)
-
-pos_x = []
-pos_y = []
-color = []
-
-
-# get screen loc for start lights
-def on_click(x, y, button, pressed):
-    if pressed:
-        pos_x.append(x)
-        pos_y.append(y)
-        color.append(windll.gdi32.GetPixel(windll.user32.GetDC(0), pos_x[0], pos_y[0]))
-        if len(color) == 2:
-            listener.stop()
-            print(pos_x[0], pos_y[0])
-            print(color)
 
 
 def space(seconds):
@@ -78,8 +59,4 @@ def main():
 
 
 if __name__ == "__main__":
-    if get_start_light_screen_location:
-        with Listener(on_click=on_click) as listener:
-            listener.join()
-        quit()
     main()
