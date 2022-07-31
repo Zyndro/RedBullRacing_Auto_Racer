@@ -27,6 +27,16 @@ def space_boost(seconds):
 def wait(seconds):
     time.sleep(seconds)
 
+def detect_start():
+    while True:
+        color = windll.gdi32.GetPixel(*get_color_from)
+        if color == red:
+            y = True
+            while y:
+                color = windll.gdi32.GetPixel(*get_color_from)
+                if color == gray:
+                    race_start()
+
 
 def race_start():
     space(1.767)  # corner 1
@@ -49,14 +59,7 @@ def race_start():
 
 
 def main():
-    while True:
-        color = windll.gdi32.GetPixel(*get_color_from)
-        if color == red:
-            y = True
-            while y:
-                color = windll.gdi32.GetPixel(*get_color_from)
-                if color == gray:
-                    race_start()
+    detect_start()
 
 
 if __name__ == "__main__":
