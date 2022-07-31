@@ -29,22 +29,23 @@ def wait(seconds):
 
 
 def race_start():
-    space(1.767)  # z1
+    space(1.767)  # corner 1
     wait(0.33)
-    space(4.824)  # z2
+    space(4.824)  # corner 2
     wait(0.39)
-    space(4.36)  # z3
+    space(4.36)  # corner 3
     wait(0.31)
-    space(3.88)  # z4 bull
+    space(3.88)  # corner 4 (Bull)
     wait(0.26)
-    space(1.56)  # z5
+    space(1.56)  # corner 5
     # wait(0.0001)
-    space(2.09)  # z6
+    space(2.09)  # corner 6
     wait(0.06)
-    space(1)  # z7
+    space(1)  # corner 7
     wait(0.01)
-    space_boost(5)
+    space_boost(5)  # finish
     quit()
+    # Best time: 1'05'741
 
 
 def main():
