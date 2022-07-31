@@ -5,23 +5,29 @@ from ctypes import *
 
 # Click on the start light in minigame to get its position on screen and color
 # Set False to start racing
-get_start_light_screen_location = False
-get_color_from = (windll.user32.GetDC(0), 839, 503)
-gray = 12961221
-red = 7294194
+get_start_light_screen_location = True
+# Fill those manually for your screen
+start_light_x = 839
+start_light_y = 502
+gray = 13158600
+red = 7491571
+get_color_from = (windll.user32.GetDC(0), start_light_x, start_light_y)
+
+pos_x = []
+pos_y = []
+color = []
 
 
 # get screen loc for start lights
 def on_click(x, y, button, pressed):
-    pos_x = []
-    pos_y = []
     if pressed:
         pos_x.append(x)
         pos_y.append(y)
-        color = windll.gdi32.GetPixel(windll.user32.GetDC(0), pos_x[0], pos_y[0])
-        if len(pos_x) == 1:
+        color.append(windll.gdi32.GetPixel(windll.user32.GetDC(0), pos_x[0], pos_y[0]))
+        if len(color) == 2:
             listener.stop()
-            print(pos_x[0], pos_y[0], color)
+            print(pos_x[0], pos_y[0])
+            print(color)
 
 
 def space(seconds):
