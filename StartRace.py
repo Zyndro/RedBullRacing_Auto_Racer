@@ -3,9 +3,10 @@ import pyautogui
 from ctypes import *
 
 
-# Fill those manually for your screen with data from other script
+# Fill those manually for your screen with data from StartLightPosition.py
 start_light_x = 838
 start_light_y = 503
+# decimal to hex color
 gray = 12632256
 red = 6899952
 get_color_from = (windll.user32.GetDC(0), start_light_x, start_light_y)
@@ -19,6 +20,7 @@ def space(seconds):
 
 def space_boost(seconds):
     pyautogui.keyDown('space')
+    time.sleep(0.1)
     pyautogui.press('shift')
     time.sleep(seconds)
     pyautogui.keyUp('space')
@@ -27,12 +29,13 @@ def space_boost(seconds):
 def wait(seconds):
     time.sleep(seconds)
 
+
 def detect_start():
     while True:
         color = windll.gdi32.GetPixel(*get_color_from)
         if color == red:
-            y = True
-            while y:
+            color_changed = True
+            while color_changed:
                 color = windll.gdi32.GetPixel(*get_color_from)
                 if color == gray:
                     race_start()
