@@ -25,6 +25,10 @@ First time run:
     start_light_x = 
     start_light_y = 
     ```
-* Start the race and run ```StartRace.py``` when camera stops spinning, keep focus on the browser window
+* Start the race and run ```StartRace.py``` when the camera stops spinning(picture below), keep focus on the browser window
+
+  ![obraz](https://user-images.githubusercontent.com/45998308/193125170-843f06dd-c826-41d0-8531-1559b3d44fdf.png)
+
+
 
 You can tweak the inputs in the ```race_start``` function in ```StartRace.py``` file.
