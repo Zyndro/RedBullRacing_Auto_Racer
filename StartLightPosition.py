@@ -11,11 +11,8 @@ def on_click(x, y, button, pressed):
     if pressed:
         pos_x.append(x)
         pos_y.append(y)
-        color.append(windll.gdi32.GetPixel(windll.user32.GetDC(0), pos_x[0], pos_y[0]))
-        if len(color) == 2:
-            listener.stop()
-            print(pos_x[0], pos_y[0])
-            print(color)
+        print(pos_x[0], pos_y[0])
+        listener.stop()
 
 
 if __name__ == "__main__":

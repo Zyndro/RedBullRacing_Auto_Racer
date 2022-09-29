@@ -18,15 +18,13 @@ pip3 install -r requirements.txt
 ## Usage
 First time run:
 
-* Start the game, then start this script: ```StartLightPosition.py```
-* alt tab to the game window and click in the middle of the start lights when they are gray and again when they are red(click in the same spot)
-* Edit the ```StartRace.py``` with values you got from the first script, lines 7-10
+* Start the race, then start this script: ```StartLightPosition.py```
+* alt tab to the game window and click in the middle of the start lights to get their position.
+* Edit the ```StartRace.py``` with values you got from the first script, lines 7-8
     ```
     start_light_x = 
     start_light_y = 
-    gray = 
-    red = 
     ```
-* Run ```StartRace.py``` and start the race(keep window focus on the game).
+* Start the race and run ```StartRace.py``` when camera stops spinning, keep focus on the browser window
 
 You can tweak the inputs in the ```race_start``` function in ```StartRace.py``` file.

@@ -2,13 +2,9 @@ import time
 import pyautogui
 from ctypes import *
 
-
 # Fill those manually for your screen with data from StartLightPosition.py
-start_light_x = 838
-start_light_y = 503
-# decimal to hex color
-gray = 12632256
-red = 6899952
+start_light_x = 958
+start_light_y = 516
 get_color_from = (windll.user32.GetDC(0), start_light_x, start_light_y)
 
 
@@ -31,14 +27,20 @@ def wait(seconds):
 
 
 def detect_start():
-    while True:
+    start = True
+    while start:
         color = windll.gdi32.GetPixel(*get_color_from)
-        if color == red:
+
+        if 5500000 < int(color) < 7000000:
             color_changed = True
             while color_changed:
                 color = windll.gdi32.GetPixel(*get_color_from)
-                if color == gray:
-                    race_start()
+                print(color)
+                if 12000000 < int(color) < 13000000:
+                    print("start")
+                    start = False
+                    break
+    race_start()
 
 
 def race_start():
